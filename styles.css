@@ -1,0 +1,162 @@
+/* Custom Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Utility Classes */
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.service-icon {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Section Spacing and Organization */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Additional Image Fixes */
+.portfolio-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.client-logo-container {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Client Logo Styling */
+.clients-section img {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.clients-section img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Portfolio Grid Improvements */
+.portfolio-grid {
+    gap: 1.5rem;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    position: relative;
+    background: #f9fafb;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* Form Input Focus States */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Motion Graphics Section */
+.motion-section {
+    background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
+}
+
+.motion-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* Header Section Improvements */
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure all sections have proper spacing */
+.section-spacing {
+    padding: 5rem 0;
+}
+
+/* Client logos hover effect improvements */
+.client-logo-hover {
+    transition: all 0.4s ease;
+    filter: grayscale(100%) brightness(1.1);
+}
+
+.client-logo-hover:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+/* Responsive Image Handling */
+@media (max-width: 768px) {
+    .header-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .client-logo {
+        height: 3rem;
+    }
+    
+    .portfolio-image {
+        height: 200px;
+    }
+}
+
+/* WhatsApp Button Animation */
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
