@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     serviceCards.forEach(card => {
         card.addEventListener('click', function() {
             const serviceName = this.querySelector('h3').textContent;
-            alert(`You clicked on: ${serviceName}. Contact me to get started!`);
+            alert(`You clicked on: ${serviceName}. Reach out to start your motion project!`);
         });
     });
 
-    // Form submission (if you add a contact form later)
+    // Form submission
     const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = this.querySelector('textarea').value;
             
             // Create WhatsApp message
-            const whatsappMessage = `Hi Vijaykumar! 
+            const whatsappMessage = `Hi Nova! 
             
 New Contact Form Submission:
 📝 Name: ${name}
@@ -61,7 +61,7 @@ Looking forward to working with you!`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
             
             // Open WhatsApp with pre-filled message
-            const whatsappURL = `https://wa.me/919315135153?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/919876543210?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
             
             // Show success message
@@ -77,7 +77,7 @@ Looking forward to working with you!`;
         const whatsappButton = document.createElement('div');
         whatsappButton.className = 'fixed bottom-6 right-6 z-50 whatsapp-float';
         whatsappButton.innerHTML = `
-            <a href="https://wa.me/919315135153?text=Hi%20Vijaykumar!%20I'm%20interested%20in%20your%20digital%20marketing%20services." 
+            <a href="https://wa.me/919876543210?text=Hi%20Nova!%20I'm%20interested%20in%20motion%20design%20services." 
                target="_blank" 
                class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -90,4 +90,17 @@ Looking forward to working with you!`;
 
     // Create WhatsApp floating button
     createWhatsAppButton();
+
+    // Reveal on scroll animations
+    const revealItems = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
 });
