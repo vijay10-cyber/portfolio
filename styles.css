@@ -23,7 +23,7 @@
 }
 
 .gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #5f7cff 0%, #8a56e8 50%, #f06595 100%);
 }
 
 .card-hover:hover {
@@ -37,6 +37,19 @@
 
 .service-card:hover .service-icon {
     transform: scale(1.1);
+}
+
+.service-card,
+.testimonial-card,
+.portfolio-grid .group {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.testimonial-card:hover,
+.portfolio-grid .group:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 30px -12px rgba(15, 23, 42, 0.35);
 }
 
 /* Section Spacing and Organization */
@@ -118,10 +131,37 @@ img {
     object-fit: cover;
 }
 
+.motion-image,
+.portfolio-image {
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.motion-image:hover,
+.portfolio-image:hover {
+    transform: scale(1.05);
+    filter: saturate(1.1);
+}
+
 /* Header Section Improvements */
 .header-content {
     position: relative;
     z-index: 2;
+}
+
+header.scrolled {
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2);
+}
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Ensure all sections have proper spacing */
