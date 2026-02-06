@@ -118,6 +118,11 @@ img {
     object-fit: cover;
 }
 
+/* Animation Booking Section */
+.animation-booking-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
 /* Header Section Improvements */
 .header-content {
     position: relative;
